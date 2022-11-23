@@ -1,0 +1,27 @@
+<h1>Listing tasks</h1>
+
+<table>
+  <tr>
+    <th>Description</th>
+    <th>Project</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @tasks.each do |task| %>
+<% if task.persisted? %>
+  <tr>
+    <td><%= task.name %></td>
+    <td><%= task.project %></td>
+    <td><%= link_to 'Show', [task.project, task], class: "btn btn-info" %></td>
+    <td><%= link_to 'Edit', edit_project_task_path(task.project, task) %></td>
+    <td><%= link_to 'Destroy', [task.project, task], 'data-turbo-method': :delete %></td>
+  </tr>
+<% end %>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Task', new_project_task_path(params[:project_id]) %>

@@ -1,0 +1,89 @@
+<%= form_with(model: project) do |form| %>
+  <% if project.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(project.errors.count, "error") %> prohibited this project from being saved:</h2>
+
+      <ul>
+        <% project.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <h1 class="nam"> <%= form.label :name, style: "display: block" %></h1>
+  <div class="name">
+
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="dis">
+    <%= form.label :description, style: "display: block" %>
+</div>
+<div class="dit">
+    <%= form.text_area :description %>
+  </div>
+  <div class="up">
+<%= form.number_field :user_id, id: :project_user_id, value: current_user.id, type: :hidden %>
+  </div>
+  <div class="up">
+    <%= form.submit %>
+  </div>
+<% end %>
+
+<style>
+.nam{
+  font-size: 30px;
+    margin: 10px;
+  text-align: center;
+  justify-content:center;
+}
+.name{
+  /* background-color:red; */
+  font-size: 20px;
+    width: 350px;
+  padding: 4px;
+  margin: 2px;
+  text-align: center;
+  justify-content:center;
+   display: inline-block;
+}
+.dis{
+  /* background-color:blue; */
+    font-size: 30px;
+    margin: 2px;
+  text-align: center;
+  justify-content:center;
+}
+.dit{
+    font-size: 18px;
+    width: 400px;
+  padding: 4px;
+  text-align: center;
+  justify-content:center;
+   display: inline-block;
+}
+.up{
+  /* background-color:red; */
+    width: 100%;
+  padding-top: 5px; 
+  padding-bottom: 15px;
+  padding-left: 5px;
+}
+#project_description{
+  width: 100%;
+  padding-top: 5px; 
+  padding-bottom: 15px;
+  padding-left: 5px;
+}
+
+
+
+
+
+
+
+
+
+
+</style>

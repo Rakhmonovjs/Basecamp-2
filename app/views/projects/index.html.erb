@@ -1,0 +1,66 @@
+
+<h1 class="pro">Projects</h1>
+  
+<h3 class="new"><%= link_to "New project", new_project_path %>
+</h3>
+
+<div class="row">
+
+<% @projects.each do |project| %>
+<div class="card" style="width: 14.5rem;">
+  <div class="card-body">
+    <h5 class="card-title">Name:
+    <p><%= project.name %></p>
+    </h5>
+    <h5 class="card-text">Discription:<p><%= project.description %></p></h5>
+    <a href="#" class="card-link"><%= link_to " Show", project %></a>
+  </div>
+</div>
+<% end %>
+</div>
+
+<%
+=begin%>
+ <h3 class="new"><%= link_to "New project", new_project_path %> 
+<%
+=end%>
+</h3>
+<style>
+.pro{
+
+background: linear-gradient(90deg, rgba(109,69,252,0.32328124999999996) 22%, rgba(171,252,69,0.5866145833333334) 56%, rgba(252,69,87,0.57328125) 85%);
+
+  height:50px;
+  /* padding: 20px; */
+  width: 500px;
+  margin: auto;
+  border-radius: 19px;
+  text-align: center;
+  box-shadow: -1px 15px 50px -12px blue;
+}
+.new{
+  background: rgb(131,58,180);
+background: rgb(69,252,98);
+background: linear-gradient(90deg, rgba(69,252,98,0.2199479166666667) 22%, rgba(248,252,69,0.5866145833333334) 56%, rgba(252,69,87,0.4766145833333333) 79%);
+  border: none;
+  color: white;
+  margin:30px;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+.card_title{
+  color:red;
+  background-color:red;
+}
+.card{
+   box-shadow: -10px 15px 50px -17px;
+   background-color:background: rgb(252,245,69);
+background: linear-gradient(90deg, rgba(252,245,69,0.41661458333333334) 6%, rgba(252,69,69,0.4766145833333333) 79%);
+   padding: 5px 10px;
+   margin: 8px 5px;
+}
+
+</style>

@@ -1,0 +1,29 @@
+<div align="center" style="font-size: 30px;">
+<div class="div_edit_task">
+<%= form_for([@task.project, @task]) do |f| %>
+  <% if @task.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@task.errors.count, "error") %> prohibited this task from being saved:</h2>
+
+      <ul>
+      <% @task.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_area :name%>
+  </div>
+  <div class="actions">
+    <%= f.submit "Edit", class: "btn btn-primary"%>
+  </div>
+  <div>
+<%= link_to "Back", new_project_task_path(@project) %>
+  
+  </div>
+<% end %>
+</div>
+</div>

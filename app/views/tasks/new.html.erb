@@ -1,0 +1,133 @@
+
+<%= form_for([@task.project, @task]) do |f| %>
+
+<section class="box">
+  <div class="box_1">
+    <div class="box_2">
+      <div class="box_3">
+        <div class="box_4">
+          <div class="card-body p-4">
+
+            <h4 class="text-center my-3 pb-3">To Do App</h4>
+
+            <form class="row row-cols-xl-auto g-3 justify-content-center align-items-center mb-4 pb-2">
+              <div class="col-12">
+                <div class="form-outline">
+                  <%= f.text_area :name, class:"form-control", id: "form1" %>
+                  <label class="form-label" for="form1">Enter a task here</label>
+                </div>
+              </div>
+
+              <div class="col-12">
+                <%= f.submit "Creat Task", class:"btn btn-primary"%>
+                 <div class="col-3,btn btn-outline-primary" style="margin-left: 602px;margin-top: -22px;">
+                <h5 ><%= link_to "Back", project_path(@project) %></h5>
+              
+              </div>
+              </div>
+                  
+            </form>
+              <% end %>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">Id</th>
+                  <th scope="col">Description</th>
+                  <th scope="col">Show</th>
+                  <th scope="col">Edit</th>
+                  <th scope="col">Delete</th>
+                </tr>
+              </thead>
+              <tbody>
+                <% @tasks.each do |task| %>
+                <% if task.persisted? %>
+                <tr>
+                  <th scope="row"><%= task.id %></th>
+                  <td class="btn btn-outline-secondary" style="margin: 7px" ><%= task.name %></td>
+                  <td>
+                  <%= link_to "Show", project_task_path(@project, task), class: "btn btn-outline-primary" %>
+                  </td>
+                  <td>
+                    <%= link_to 'Edit', edit_project_task_path(task.project, task), class: "btn btn-outline-success"  %>
+                  </td>
+                  <td>
+                    <%= link_to 'Destroy', [task.project, task], 'data-turbo-method': :delete, class:"btn btn-outline-danger", onclick: "return confirm('Are You Sure!')" %>
+                  </td>
+                </tr>
+                <% end %>
+                <% end %>
+
+              </tbody>
+            </table>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<style>
+.box{
+  /* background-color: #fafafa; */
+   margin: 0;
+  padding: 0;
+        color: #212529;
+    
+    border-color: #dee2e6;
+  height:100%;
+
+  width: 700px;
+  margin: auto;
+  border-radius: 19px;
+  text-align: center;
+  box-shadow: -1px 15px 50px -12px blue;
+}
+.box_2{
+  /* background-color: red; */
+  margin: 0;
+  padding: 0;
+  justify-content:center;
+  align-items:center;
+  position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    
+
+    
+}
+.box_3{
+  /* background-color:red; */
+  width: 700px;
+}
+.form-label{
+   margin-left: 10px;
+    margin-right: 10px;
+  justify-content:center;
+  text-align:center;
+  border: 2px solid green;
+  padding: 00px;
+  margin: 5px;
+}
+.table{
+    --bs-table-bg: transparent;
+    --bs-table-accent-bg: transparent;
+    --bs-table-striped-color: #212529;
+    --bs-table-striped-bg: rgba(0, 0, 0, 0.05);
+    --bs-table-active-color: #212529;
+    --bs-table-active-bg: rgba(0, 0, 0, 0.1);
+    --bs-table-hover-color: #212529;
+    --bs-table-hover-bg: rgba(0, 0, 0, 0.075);
+    width: 100%;
+    margin-bottom: 1rem;
+    color: #212529;
+    vertical-align: top;
+    border-color: #dee2e6;
+}
+
+
+
+
+
+</style>

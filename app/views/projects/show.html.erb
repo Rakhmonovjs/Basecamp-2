@@ -1,0 +1,104 @@
+<div class="pro">
+<%= render @project %>
+
+ <%= link_to "Tasks", new_project_task_path(@project), class: "task" %>
+ <%= link_to "Attachment", new_project_upl_path(@project), class: "task" %>
+
+<%= button_to "Destroy this project", @project, method: :delete, class: "destr" %>
+
+
+
+  <%= link_to "Edit this project", edit_project_path(@project), class:"edit" %> 
+
+
+
+  <%= link_to "Back to projects", projects_path, class:"back" %>
+
+<%
+=begin%>
+ <div class="task">
+ <%= link_to "Tasks", new_project_task_path(@project) %>
+</div> 
+<%
+=end%>
+</div>
+
+
+<style>
+
+.pro{
+      color: #212529;
+    
+    border-color: #dee2e6;
+  height:510px;
+
+  width: 700px;
+  margin: auto;
+  border-radius: 19px;
+  text-align: center;
+  box-shadow: -1px 15px 50px -12px blue;
+
+}
+.task{
+  margin: 10px;
+  border-radius: 19px;
+  color: blue;
+background: rgb(2,0,36);
+background: linear-gradient(10deg, rgba(2,0,36,1) 0%, rgba(8,29,134,1) 0%, rgba(16,16,152,1) 0%, rgba(0,212,255,1) 100%);
+    display: flex;
+  align-items: center;
+  justify-content: center;
+    width: 15rem;
+  height: 2rem;
+  /* vertical-align: top; */
+}
+.destr{
+background: rgb(2,0,36);
+border-radius: 19px;
+  margin: 10px;
+background: linear-gradient(200deg, rgba(2,0,36,1) 0%, rgba(8,29,134,1) 0%, rgba(16,16,152,1) 0%, rgba(0,212,255,1) 100%);
+
+  color: red;
+  width: 15rem;
+  height: 2rem;
+  text-align: center;
+  /* font: 14px "Helvetica", sans-serif; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+
+
+.edit{
+    margin: 10px;
+  color: blue;
+background: rgb(2,0,36);
+border-radius: 19px;
+background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(8,29,134,1) 0%, rgba(16,16,152,1) 0%, rgba(0,212,255,1) 60%);
+    display: flex;
+  align-items: center;
+  justify-content: center;
+    width: 15rem;
+  height: 2rem;
+  margin-left: 448px;
+}
+.back{
+    /* margin: 10px; */
+  color: blue;
+background: rgb(2,0,36);
+border-radius: 19px;
+background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(8,29,134,1) 0%, rgba(16,16,152,1) 0%, rgba(0,212,255,1) 60%);
+    display: flex;
+  align-items: center;
+  justify-content: center;
+    width: 15rem;
+  height: 2rem;
+  
+    margin-left: 448px;
+
+}
+
+
+</style>

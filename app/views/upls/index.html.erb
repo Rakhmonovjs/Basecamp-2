@@ -1,0 +1,87 @@
+
+<p style="color: green"><%= notice %></p>
+
+<h1 class="upl">Upls 🗂</h1>
+
+<div class="upls">
+  <% @upls.each do |upl| %>
+  <% if upl.fayl.attached? %>
+
+
+     <% if  upl.fayl.image?%>
+    <h2 class="entry-title"><a href="#"><%= link_to image_tag(upl.fayl, class: "img_upload"),  rails_blob_path(upl.fayl, disposition: "attachment") %>
+     <% else %>
+    <h2 class="entry-title"><a href="#"><%= link_to upl.fayl.filename,  rails_blob_path(upl.fayl, disposition: "attachment") %></a></h2>
+
+
+<% end %>
+
+    <%= render upl %>
+    <p>
+      <%= link_to "Show this upl", project_upl_path( @project, upl) %>
+    </p>
+  <% end %>
+  <% end %>
+
+</div>
+
+
+<style>
+
+.upl{
+          color: #212529;
+    
+    border-color: #dee2e6;
+  height:45px;
+  /* padding: 20px; */
+  width: 500px;
+  margin: 0 auto;
+  margin-bottom: 50px;
+  border-radius: 19px;
+  text-align: center;
+  box-shadow: -1px 15px 50px -12px blue;
+}
+.upls{
+    /* border: 1px solid black; */
+  /* margin-top: 100px;
+  margin-bottom: 100px;
+  margin-right: 150px;
+  margin-left: 80px; */
+  /* background-color: lightblue; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.entry-title{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+    align-items: center;
+
+  margin-right: 80px;
+  /* margin:50px; */
+}
+/* .wrapper{ 
+   display: flex;
+  flex-wrap: wrap;
+} */
+.img_upload{
+   border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  width: 200px;
+  height: 200px;
+  margin-bottom: 30px;
+}
+.new{
+    height:45px;
+    
+  margin: 0 auto;                         
+  width: 500px;
+  border-radius: 19px;
+  text-align: center;
+  box-shadow: -1px 15px 50px -12px blue;
+}
+</style>
+
+<h3 class="new"><%= link_to "New upl", new_project_upl_path(@project) %></h3>

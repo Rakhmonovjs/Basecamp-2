@@ -1,0 +1,54 @@
+<h1 class="pro">New project+</h1>
+
+<div class="obc">
+<div class="name">
+<%= render "form", project: @project %>
+</div>
+<br>
+
+<div class="back">
+  <%= link_to "Back to projects", projects_path %>
+</div>
+</div>
+<style>
+.back{
+   background: linear-gradient(90deg, rgba(109,69,252,0.32328124999999996) 22%, rgba(171,252,69,0.5866145833333334) 56%, rgba(252,69,87,0.57328125) 85%);
+
+  height:50px;
+  font-size:30px;
+  /* padding: 20px; */
+  display:absolute;
+  left: 600px;
+  down:60px;
+  max-width: 500px;
+  margin: auto;
+  border: 3px solid #73AD21;
+  /* margin: 50px; */
+  border-radius: 19px;
+  text-align: center;
+}
+.pro{
+  background: linear-gradient(90deg, rgba(109,69,252,0.32328124999999996) 22%, rgba(171,252,69,0.5866145833333334) 56%, rgba(252,69,87,0.57328125) 85%);
+
+  height:50px;
+  /* padding: 20px; */
+  width: 250px;
+  /* margin: 50px; */
+  border-radius: 19px;
+  text-align: center;
+  
+}
+.name{
+  display: flex;
+  justify-content: center;
+  /* height:50px; */
+  /* padding: 20px; */
+  width: 500px;
+  margin: auto;
+  border-radius: 19px;
+  text-align: center;
+  /* box-shadow: -1px 15px 50px -12px blue; */
+}
+
+
+</style>

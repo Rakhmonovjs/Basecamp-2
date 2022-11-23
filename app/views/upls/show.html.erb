@@ -1,0 +1,40 @@
+<div class="name">
+<p style="color: green"><%= notice %></p>
+
+<%= render @upl %>
+
+<div>
+
+  <%= link_to "Edit this upl", edit_project_upl_path(@project,@upl) %> |
+  <%= link_to "Back to upls", project_upls_path(@project) %>
+
+   <%= button_to 'Destroy', [@upl.project, @upl], method: :delete, class: "more-link"  %>
+</div>
+</div>
+
+<style>
+  .name{
+     height:50px;
+  font-size:25px;
+
+  display:absolute;
+  border-radius: 19px;
+  text-align: center;
+  
+      /* color: #212529; */
+    /* vertical-align: top; */
+    /* border-color: #dee2e6; */
+    position: relative;
+  height:330px;
+  width: 500px;
+  margin: auto;
+  border-radius: 19px;
+  text-align: center;
+   box-shadow: -1px 15px 30px -12px #45fcbc;
+  z-index: 9999;
+  }
+
+
+
+
+</style>

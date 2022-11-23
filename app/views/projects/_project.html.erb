@@ -1,0 +1,72 @@
+
+<div id="<%= dom_id project %>" class="project">
+  <p class="ndu">
+    <strong>Name:</strong>
+    "<%= project.name %>"
+  </p>
+
+  <p class="ndu">
+    <strong>Description:</strong>
+    [<%= project.description %>]
+  </p>
+
+  <p class="ndu">
+    <strong>User:</strong>
+    
+    №<%= project.user_id %>
+
+  
+  </p>
+  <p>
+  
+ 
+<%
+=begin%>
+ <strong class="task"><%= link_to "Tasks", new_project_task_path(@project) %></strong> 
+<%
+=end%>
+ </p>
+</div>
+
+<style>
+
+.task{
+/* width: 80%; */
+
+  display: inline-block;
+  margin-left: -500px;
+  margin-top: -302px;
+  position: relative;
+  padding: 2px;
+   border: 3px solid lighten(blue, 24);
+
+
+}
+.project {
+  /* background-color: red; */
+    color: #212529;
+    vertical-align: top;
+    border-color: #dee2e6;
+    position: relative;
+  height:330px;
+  /* height: -10px; */
+  /* margin-top: 100px; */
+  /* width:-10px; */
+  width: 600px;
+  margin: auto;
+  border-radius: 19px;
+  position: relative;
+  text-align: center;
+  box-shadow: -1px 8px 50px -10px red;
+   /* box-shadow: -1px 15px 30px -12px blue; */
+  z-index: 9999;
+}
+.ndu{
+  /* background-color:red; */
+  margin: 90px;
+  padding: 10px;
+  text-align: center;
+}
+
+
+</style>

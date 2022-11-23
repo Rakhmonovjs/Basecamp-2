@@ -1,0 +1,13 @@
+<h1 align="center">Editing task</h1>
+<div align="center">
+<%= form_for([@task.project, @task]) do |f| %>
+  <div class="card" style="width: 18rem; text-align: center;">
+  <div class="card-body">
+    <h5 class="card-title">Update Task</h5>
+    <p class="card-text"><%= f.text_area :name%></p>
+    <%= f.submit "Edit", class: "btn btn-primary"%>
+    <%= link_to "Back", new_project_task_path(@project) %>
+  </div>
+</div>
+<% end %>  
+</div>
