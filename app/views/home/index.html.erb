@@ -11,57 +11,60 @@
 <div class="hero">
     <div class="box">
         <div class="button">
-           <h1 class=""> <%= link_to 'Sign in', new_user_session_path, class:"btn" %></h1>
+           <h1 class="btn"> <%= link_to 'Sign in', new_user_session_path, class:"btn" %></h1>
 
-            <h1  class=""><%= link_to 'Sign up', new_user_registration_path, class:"btn " %></h1>
+        </div>
+        <div class="button">
+
+            <h1  class="btn"><%= link_to 'Sign up', new_user_registration_path, class:"btn " %></h1>
         </div>
     </div>
 </div>
 
 <% end %>
-<style>
+<%
+=begin%>
+ <style>
 
-.hero{
-    /* height: 100%; */
-    /* width: 100%; */
-    /* background: rgb(2,0,36); */
-    /* background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(152,28,73,1) 35%, rgba(0,212,255,1) 100%); */
-    /* background-position: center; */
-    /* background-size: cover; */
-    /* position: absolute; */
+@import url('https://fonts.googleapis.com/css?family=Poppins:100, 200, 300, 400, 500, 600, 700, 800,900');
+*
+{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: 'Poppins', sans-serif;
 }
-.box{
-    /* width: 380px; */
-    /* height: 480px; */
-    /* position: relative; */
-    margin: 60% auto;
-    /* background: #fff; */
-    /* padding: 5px; */
+.hero
+{
+    padding:10%;
+    margin:10%;
+display: flex;
+justify-content: center;
+align-items: center;
+height: 50vh;
+width:50vh;
+background: #000;
 }
-.button-box{
-    /* width: 220px; */
-/* margin: 35px auto; */
-/* position: relative; */
-/* box-shadow:0 0 20px 9px #ff61241f; */
-/* border-radius: 30px; */
-
+.button{
+    position: relative;
 }
-.btn{
-    
-/* padding: 10px 30px; */
-/* cursor: pointer; */
-/* background: transparent; */
-/* border: 0; */
-/* outline: none; */
-
-/* width: 110px; */
-/* height: 100%; */
-background: linear-gradient(to right, #ff105f,#ffad06);
-/* border-radius: 30px; */
-/* transition: .5s; */
+.button h1{
+    position: absolute;
+    color: #fff;
+    transform: translate(-50%, -50%);
+    font-size: 8em;
 }
-
-
-
-</style>
+.button h1:nth-child(1)
+{
+color: transparent;
+-webkit-text-stroke: 2px #03a9f4;
+}
+.button h1:nth-child(2)
+{
+color: #03a9f4;
+animation: animate 4s ease-in-out;
+}
+</style> 
+<%
+=end%>
 
