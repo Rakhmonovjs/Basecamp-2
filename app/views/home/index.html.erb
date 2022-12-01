@@ -9,7 +9,7 @@
 <% else %>
 
 <div class="body">
-    <div class="box">
+
         <div class="a">
            <h1 class="span"> <%= link_to 'Sign in', new_user_session_path, class:"btn" %></h1>
 
@@ -18,7 +18,6 @@
 
             <h1  class="span"><%= link_to 'Sign up', new_user_registration_path, class:"btn " %></h1>
         </div>
-    </div>
 </div>
 
 <% end %>
@@ -41,70 +40,6 @@ font-family: 'Poppins', sans-serif;
     min-height:100vh;
     /* background: #0e1538; */
 
-}
-a
-{
-    position: relative;
-    background: #555;
-    color: #fff;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-size: 2.5em;
-    letter-spacing: 1em;
-    padding: 10px 30px;
-    transition: 0.5s;
-}
-a:hover{
-    letter-spacing: 0.25em
-}
-a::before{
-    content: '';
-    position: absolute;
-    inset: 2px;
-    /* background: #27282c; */
-}
-a span {
-    position: relative;
-    z-index: 1;
-    
-}
-a i {
-    position: absolute;
-    inset: 0; 
-    display: block;
-}
-a i::before
-{
-    content: '';
-    position: absolute;
-    top: -3.5px;
-    left: 80%;
-    width: 10px;
-    height: 5px;
-    border: 2px solid |#fff;
-    background: #27282c;
-
-    transition: 0.5s;
-}
-a:hover i::before{
-    width: 20px;
-    left: 20%;
-}
-a i::after
-{
-    content: '';
-    position: absolute;
-    bottom: -3.5px;
-    left: 80%;
-    width: 10px;
-    height: 5px;
-    border: 2px solid |#fff;
-    background: #27282c;
-    transition: 0.5s;
-}
-a:hover i::after{
-    width: 20px;
-    left: 80%;
 }
 
 </style> 
