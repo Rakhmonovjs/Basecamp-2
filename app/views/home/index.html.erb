@@ -22,8 +22,8 @@
 </div>
 
 <% end %>
-<%
-=begin%>
+
+
  <style>
 
 @import url('https://fonts.googleapis.com/css?family=Poppins:100, 200, 300, 400, 500, 600, 700, 800,900');
@@ -34,37 +34,36 @@ padding: 0;
 box-sizing: border-box;
 font-family: 'Poppins', sans-serif;
 }
-.hero
-{
-    padding:10%;
-    margin:10%;
-display: flex;
-justify-content: center;
-align-items: center;
-height: 50vh;
-width:50vh;
-background: #000;
+.hero{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height:100vh;
+    /* background: #0e1538; */
+
 }
 .button{
-    position: relative;
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
 }
-.button h1{
+.btn{
+    position:relative;
+    width:160px;;
+    height:60px;
+    display: inline-block;
+    background: #fff;
+    margin:20px;
+}
+.btn:before,
+.btn:after{
+    content: "";
     position: absolute;
-    color: #fff;
-    transform: translate(-50%, -50%);
-    font-size: 8em;
-}
-.button h1:nth-child(1)
-{
-color: transparent;
--webkit-text-stroke: 2px #03a9f4;
-}
-.button h1:nth-child(2)
-{
-color: #03a9f4;
-animation: animate 4s ease-in-out;
-}
+    inset: 0;
+    background: #f00;
+    transition: 0.5s;
+
 </style> 
-<%
-=end%>
+
 
