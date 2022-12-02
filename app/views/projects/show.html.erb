@@ -1,19 +1,20 @@
 <div class="pro">
 <%= render @project %>
+<div class="left">
+ <h4 class="names"><%= link_to "Tasks", new_project_task_path(@project), class: "task" %></h4>
+ <h4 class="names"><%= link_to "Attachment", new_project_upl_path(@project), class: "task" %></h4>
 
- <%= link_to "Tasks", new_project_task_path(@project), class: "task" %>
- <%= link_to "Attachment", new_project_upl_path(@project), class: "task" %>
-
-<%= button_to "Destroy this project", @project, method: :delete, class: "destr" %>
-
-
-
-  <%= link_to "Edit this project", edit_project_path(@project), class:"edit" %> 
+<h4 class="names"><%= button_to "Destroy this project", @project, method: :delete, class: "destr" %></h4>
 
 
+<div class="rig">
+  <h4 class="names"><%= link_to "Edit this project", edit_project_path(@project), class:"edit" %> </h4>
 
-  <%= link_to "Back to projects", projects_path, class:"back" %>
 
+
+  <h4 class="names"><%= link_to "Back to projects", projects_path, class:"back" %></h1>
+</div>
+</div>
 <%
 =begin%>
  <div class="task">
@@ -26,18 +27,18 @@
 
 <style>
 
-.pro{
+.left{
       color: #212529;
     
-    border-color: #dee2e6;
-  height:510px;
+    /* border-color: #dee2e6; */
+  /* height:510px; */
 
   width: 700px;
   margin: auto;
   border-radius: 19px;
   text-align: center;
   box-shadow: -1px 15px 50px -12px blue;
-
+  margin-top: 10px;
 }
 .task{
   margin: 10px;
