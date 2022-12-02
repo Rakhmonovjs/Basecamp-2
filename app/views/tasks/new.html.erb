@@ -33,7 +33,11 @@
                 <tr>
                   <th scope="col">Id</th>
                   <th scope="col">Description</th>
-                  <th scope="col">Show</th>
+                  <%
+=begin%>
+ <th scope="col">Show</th> 
+<%
+=end%>
                   <th scope="col">Edit</th>
                   <th scope="col">Delete</th>
                 </tr>
@@ -44,9 +48,13 @@
                 <tr>
                   <th scope="row"><%= task.id %></th>
                   <td class="btn btn-outline-secondary" style="margin: 7px" ><%= task.name %></td>
-                  <td>
+                  <%
+=begin%>
+ <td>
                   <%= link_to "Show", project_task_path(@project, task), class: "btn btn-outline-primary" %>
-                  </td>
+                  </td> 
+<%
+=end%>
                   <td>
                     <%= link_to 'Edit', edit_project_task_path(task.project, task), class: "btn btn-outline-success"  %>
                   </td>
