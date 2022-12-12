@@ -1,11 +1,16 @@
 Rails.application.routes.draw do
+  resources :messengers
+  resources :messages do
+  resources :messengers
+    
+  end
   resources :tasks
   resources :upls
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   resources :projects do 
     resources :upls
   resources :tasks
-
+  resources :messages
   end
   devise_for :users
   root 'home#index'

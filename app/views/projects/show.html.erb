@@ -3,8 +3,12 @@
 <div class="left">
  <h4 class="names"><%= link_to "Tasks", new_project_task_path(@project), class: "task" %></h4>
  <h4 class="names"><%= link_to "Attachment", new_project_upl_path(@project), class: "task" %></h4>
-
-<h4 class="names"><%= button_to "Destroy this project", @project, method: :delete, class: "destr" %></h4>
+ <h4 class="names"><%= link_to "Messages", project_messages_path(@project), class: "task" %></h4>
+<%
+=begin%>
+ <h4 class="names"><%= button_to "Destroy this project", @project, method: :delete, class: "destr" %></h4> 
+<%
+=end%>
 
 
 <div class="rig">
@@ -13,6 +17,7 @@
 
 
   <h4 class="names"><%= link_to "Back to projects", projects_path, class:"back" %></h1>
+  <h4 class="names"><%= button_to "Destroy this project", @project, method: :delete, class: "destr" %></h4>
 </div>
 </div>
 <%

@@ -1,0 +1,20 @@
+
+<%= render @message %>
+
+<div>
+  <%= link_to "Edit this message", edit_message_path(@message) %> |
+  <%= link_to "Back to messages", project_messages_path(@project) %>
+
+  <%= button_to "Destroy this message", @message, method: :delete %>
+</div>
+
+
+
+<%= render "messengers/form", messenger: @messenger %>
+
+  <% @messengers.each do |messenger| %>
+  <%= messenger.title %>  
+    <p>
+      <%= link_to "Show this messenger", messenger %>
+    </p>
+  <% end %>

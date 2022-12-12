@@ -1,0 +1,27 @@
+<%= form_with(model: messenger) do |form| %>
+  <% if messenger.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(messenger.errors.count, "error") %> prohibited this messenger from being saved:</h2>
+
+      <ul>
+        <% messenger.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :title, style: "display: block" %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div>
+    <%= form.label :message_id, style: "display: block" %>
+    <%= form.text_field :message_id, value: @message.id, type: :hidden %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
